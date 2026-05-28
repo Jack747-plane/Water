@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water Systems in Yangon</title>
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+
+/* ===== GLOBAL ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:#ffffff;
+    color:#333;
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero {
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+    background: rgba(0,0,0,0.45);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+/* ===== GENERAL SECTION ===== */
+
+.section {
+    padding: 80px 10%;
+    background: #f8fdfd;
+}
+
+.section:nth-child(even) {
+    background: #ffffff;
+}
+
+.section h2 {
+    font-size: 42px;
+    color: #2c7a7b;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ===== CARD CONTAINER ===== */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* ===== CARD ===== */
+
+.card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-size: 28px;
+    color: #2c7a7b;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* TABLETS */
+@media (max-width: 992px) {
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .section h2 {
+        font-size: 34px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 80vh;
+        padding: 60px 20px;
+    }
+
+    .hero-content {
+        padding: 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .section p {
+        font-size: 16px;
+    }
+
+    .card-content h3 {
+        font-size: 22px;
+    }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {}
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+/* ===== FOOTER ===== */
+
+.footer{
+    background:#24565b;
+    color:white;
+    padding:60px 10% 20px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(250px,1fr));
+
+    gap:40px;
+    max-width:1300px;
+    margin:auto;
+}
+
+/* FOOTER BRAND */
+
+.footer-brand{
+    text-align:left;
+}
+
+.footer-logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+    margin-bottom:15px;
+}
+
+.footer-brand h2{
+    margin-bottom:15px;
+    color:#ffffff;
+}
+
+.footer-brand p{
+    color:#d6eeee;
+    line-height:1.8;
+}
+
+/* FOOTER LINKS */
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.footer-links h3{
+    margin-bottom:15px;
+}
+
+.footer-links a{
+    color:#d6eeee;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:white;
+    padding-left:5px;
+}
+
+/* SOCIAL ICONS */
+
+.footer-socials h3{
+    margin-bottom:20px;
+}
+
+.social-icons{
+    display:flex;
+    gap:18px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:white;
+    color:#24565b;
+    transform:translateY(-4px);
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.15);
+    margin-top:40px;
+    padding-top:20px;
+    text-align:center;
+    color:#cfe5e5;
+    font-size:14px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px){
+
+    .footer{
+        text-align:center;
+    }
+
+    .footer-brand{
+        text-align:center;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+}
+/* ===== NAVBAR ===== */
+
+.navbar{
+    background:#2f6f75;
+    padding:14px 40px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container{
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+/* BRAND */
+
+.brand-section{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+}
+
+.brand-text h2{
+    color:white;
+    font-size:22px;
+    margin:0;
+}
+
+.brand-text span{
+    color:#d7f2f4;
+    font-size:13px;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    list-style:none;
+    gap:28px;
+}
+
+.nav-links a{
+    color:#f0ead2;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    transition:0.3s;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:white;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+</style>
+</head>
+<!-- ===== NAVBAR ===== -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <!-- BRAND -->
+        <div class="brand-section">
+
+            <img src="/image/download.png"
+            alt="Logo"
+            class="logo">
+
+            <div class="brand-text">
+                <h2>Elemental Guardians</h2>
+                <span>Protecting Water For The Future</span>
+            </div>
+
+        </div>
+
+        <!-- NAVIGATION -->
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="aboutus.html">About Us</a></li>
+
+            <li><a href="sustainable smart city.html">
+                Smart City
+            </a></li>
+
+            <li><a href="watersystems.html">
+                Water Systems
+            </a></li>
+
+            <li><a href="savewater.html">
+                Save Water
+            </a></li>
+
+            <li><a href="futureplan.html">
+                Future Plan
+            </a></li>
+
+            <li><a href="reference.html">
+                References
+            </a></li>
+        </ul>
+
+    </div>
+
+</nav>
+
+<section class="section">
+
+    <h2>1. Water Sources</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+
+            <img src="https://cdn.digitalagencybangkok.com/file/client-cdn/gnlm/wp-content/uploads/2024/09/FB_IMG_1726569448167-sskm.jpg" alt="Reservoir">
+
+            <div class="card-content">
+
+                <h3>Reservoirs</h3>
+
+                <p>
+                    Yangon receives a large portion of its freshwater supply
+                    from major reservoirs and lakes located around the city.
+                    These reservoirs collect and store rainwater during the
+                    monsoon season and provide water throughout the year for
+                    homes, schools, hospitals, and businesses. Reservoirs are
+                    extremely important because they help maintain stable water
+                    levels during dry periods and support the growing population
+                    of Yangon. Proper maintenance and protection of these water
+                    sources are necessary to prevent pollution and ensure safe,
+                    reliable access to clean water for future generations.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://png.pngtree.com/thumb_back/fh260/background/20230530/pngtree-sunset-at-the-yangon-river-in-yangon-myanmar-photo-image_2834474.jpg" alt="River">
+
+            <div class="card-content">
+
+                <h3>Rivers</h3>
+
+                <p>
+                    Rivers surrounding Yangon also play an important role in
+                    supporting the city’s water system and natural environment.
+                    These rivers help transport water across different regions,
+                    support agriculture, and maintain local ecosystems. In some
+                    areas, river water can be treated and used as an additional
+                    source of freshwater when reservoir supplies become limited.
+                    However, pollution from waste, industries, and urban
+                    development can affect river water quality, making water
+                    treatment and environmental protection increasingly important
+                    for the sustainability of Yangon’s water resources.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 2 -->
+<section class="section">
+
+    <h2>2. Water Treatment Process</h2>
+
+    <p>
+        Water treatment plants are responsible for cleaning and purifying raw
+        water before it is delivered to homes and businesses across Yangon.
+        During the treatment process, water passes through several stages such
+        as filtering, sedimentation, and disinfection to remove dirt, bacteria,
+        harmful chemicals, and other pollutants. These systems ensure that the
+        water becomes safe for drinking, cooking, bathing, and daily household
+        use. Modern treatment facilities also help improve public health by
+        reducing the spread of waterborne diseases. As Yangon’s population
+        continues to grow, improving water treatment technology and expanding
+        treatment capacity will become increasingly important to meet future
+        demand.
+    </p>
+
+</section>
+
+<!-- SECTION 3 -->
+<section class="section">
+
+    <h2>3. Distribution Systems</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+
+            <img src="https://www.reuters.com/resizer/v2/https%3A%2F%2Farchive-images.prod.global.a201836.reutersmedia.net%2F2020%2F06%2F22%2FLYNXMPEG5L12P.JPG?auth=fdd9a6161d601e616331e410739f54b5691cb51550efeb8c43e0dde9037acc81&width=960&quality=80" alt="Pipelines">
+
+            <div class="card-content">
+
+                <h3>Pipelines</h3>
+
+                <p>
+                    Underground pipeline networks transport treated water from
+                    reservoirs and treatment plants to residential areas,
+                    commercial buildings, schools, and public facilities
+                    throughout Yangon. These pipelines are a critical part of
+                    the city’s infrastructure because they ensure that water can
+                    be delivered efficiently and continuously to millions of
+                    people every day. However, some pipeline systems are aging
+                    and may suffer from leaks, water pressure problems, and
+                    maintenance difficulties. Upgrading and expanding pipeline
+                    systems is important to improve water distribution and
+                    reduce unnecessary water loss across the city.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://tse1.mm.bing.net/th/id/OIP.nuhLSVz7Bi6C5ynC4aR9hgHaEK?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Maintenance">
+
+            <div class="card-content">
+
+                <h3>Maintenance</h3>
+
+                <p>
+                    Engineers and maintenance teams regularly inspect water
+                    systems to identify damaged pipes, leaks, and technical
+                    problems before they become more serious. Proper maintenance
+                    helps prevent interruptions to water supply and ensures that
+                    clean water can continue reaching communities safely.
+                    Workers also use monitoring systems and repair equipment to
+                    improve efficiency and reduce water waste. As Yangon grows
+                    larger and more urbanized, regular maintenance and smart
+                    infrastructure management will become increasingly important
+                    for creating a sustainable and reliable water system.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECTION 4 -->
+<section class="section">
+
+    <h2>4. Challenges in Yangon</h2>
+
+    <p>
+        Yangon currently faces many water-related challenges caused by rapid
+        population growth, urban expansion, climate change, and aging
+        infrastructure systems. During dry seasons, water shortages may occur
+        because reservoirs cannot always meet increasing demand. In addition,
+        old pipelines may leak or lose large amounts of water before it reaches
+        homes and businesses. Environmental pollution from waste disposal and
+        industrial activities can also reduce water quality and damage natural
+        ecosystems. These challenges highlight the need for stronger water
+        management systems, modern infrastructure, environmental protection,
+        and public awareness programs to ensure long-term sustainability.
+    </p>
+
+</section>
+
+<!-- SECTION 5 -->
+<section class="section">
+
+    <h2>5. Sustainable Future Plans</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+
+            <img src="https://tse1.mm.bing.net/th/id/OIP.rT5fTEjeqVvBtxcz5Y7MZgHaHa?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Sustainability">
+
+            <div class="card-content">
+
+                <h3>Water Conservation</h3>
+
+                <p>
+                    Encouraging responsible water usage is one of the most
+                    important steps toward creating a sustainable future for
+                    Yangon. Simple habits such as reducing unnecessary water
+                    waste, repairing leaks quickly, and using water-efficient
+                    systems can help conserve valuable freshwater resources.
+                    Public education campaigns and community programs can also
+                    increase awareness about the importance of water
+                    conservation and inspire people to adopt environmentally
+                    friendly lifestyles in their daily routines.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://tse1.mm.bing.net/th/id/OIP.rIHi_BdncqOhW15G1Ji-LwHaE8?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Future">
+
+            <div class="card-content">
+
+                <h3>Smart City Systems</h3>
+
+                <p>
+                    Future smart city technologies can greatly improve Yangon’s
+                    water management systems by using digital monitoring,
+                    automated controls, and data analysis tools. Smart sensors
+                    can detect leaks, monitor water quality, and track water
+                    usage in real time, allowing engineers to respond quickly
+                    and improve efficiency. These technologies can help reduce
+                    water loss, lower operational costs, and create a more
+                    reliable and sustainable urban water system that benefits
+                    both current residents and future generations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ===== FOOTER ===== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- FOOTER BRAND -->
+        <div class="footer-brand">
+
+            <img src="image/download.png"
+            alt="Logo"
+            class="footer-logo">
+
+            <h2>Elemental Guardians</h2>
+
+            <p>
+                Building awareness for sustainable
+                water systems and a smarter future
+                for Yangon.
+            </p>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="Home.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="sustainable smart city.html">Smart City</a>
+            <a href="watersystems.html">Water Systems</a>
+            <a href="savewater.html">Save Water</a>
+            <a href="futureplan.html">Future Plan</a>
+            <a href="references.html">References</a>
+
+        </div>
+
+        <!-- SOCIALS -->
+        <div class="footer-socials">
+
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

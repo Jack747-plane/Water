@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Sustainable Smart City Yangon</title>
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* ===== BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+    background:#2f6f75;
+    padding:14px 40px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container{
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+/* BRAND */
+
+.brand-section{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+}
+
+.brand-text h2{
+    color:white;
+    font-size:22px;
+    margin:0;
+}
+
+.brand-text span{
+    color:#d7f2f4;
+    font-size:13px;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    list-style:none;
+    gap:28px;
+}
+
+.nav-links a{
+    color:#f0ead2;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    transition:0.3s;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:white;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    background: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/savegre-river-costa-rica-3-kathy-adams-clark.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+    padding: 25px;
+    background: rgba(0,0,0,0.65);
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* ===== MAIN CONTENT ===== */
+.home-content {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.section-title {
+    color: #3b828a;
+    font-size: 2.3rem;
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    padding: 25px;
+    border: 2px solid #5e5e5e;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+    background:#24565b;
+    color:white;
+    padding:60px 10% 20px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(250px,1fr));
+
+    gap:40px;
+    max-width:1300px;
+    margin:auto;
+}
+
+/* FOOTER BRAND */
+
+.footer-brand{
+    text-align:left;
+}
+
+.footer-logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+    margin-bottom:15px;
+}
+
+.footer-brand h2{
+    margin-bottom:15px;
+    color:#ffffff;
+}
+
+.footer-brand p{
+    color:#d6eeee;
+    line-height:1.8;
+}
+
+/* FOOTER LINKS */
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.footer-links h3{
+    margin-bottom:15px;
+}
+
+.footer-links a{
+    color:#d6eeee;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:white;
+    padding-left:5px;
+}
+
+/* SOCIAL ICONS */
+
+.footer-socials h3{
+    margin-bottom:20px;
+}
+
+.social-icons{
+    display:flex;
+    gap:18px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:white;
+    color:#24565b;
+    transform:translateY(-4px);
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.15);
+    margin-top:40px;
+    padding-top:20px;
+    text-align:center;
+    color:#cfe5e5;
+    font-size:14px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px){
+
+    .footer{
+        text-align:center;
+    }
+
+    .footer-brand{
+        text-align:center;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+}
+.hero {
+    position: relative;
+    height: 100vh;
+    background: 
+        url('https://images.pexels.com/photos/7014/stream-river-sonja-langford.jpg?cs=srgb&dl=pexels-snapwire-7014.jpg&fm=jpg')
+        center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+}
+.stats-section {
+  padding: 80px 10%;
+  background: #f4f9f9;
+  text-align: center;
+}
+
+.stats-section h2 {
+  font-size: 42px;
+  color: #2c7a7b;
+  margin-bottom: 50px;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.stat-card {
+  background: white;
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+}
+
+.stat-card h3 {
+  font-size: 40px;
+  color: #319795;
+  margin-bottom: 15px;
+}
+
+.stat-card p {
+  font-size: 18px;
+  color: #555;
+}
+.water-matters {
+  padding: 90px 10%;
+  background: white;
+}
+
+.water-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+  background-color: #2c7a7b;
+}
+
+.water-text {
+  flex: 1;
+  min-width: 300px;
+  padding-left: 20px;
+}
+
+.water-text h2 {
+  font-size: 42px;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+
+.water-text p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.water-image {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 20px;
+}
+
+.water-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+.impact-section {
+  padding: 90px 10%;
+  background: #f4f9f9;
+  text-align: center;
+}
+
+.impact-section h2 {
+  font-size: 42px;
+  color: #2c7a7b;
+  margin-bottom: 15px;
+}
+
+.impact-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.impact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.impact-card {
+  background: white;
+  padding: 40px 25px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.impact-card:hover {
+  transform: translateY(-8px);
+}
+
+.impact-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.impact-card h3 {
+  font-size: 24px;
+  color: #2c7a7b;
+  margin-bottom: 15px;
+}
+
+.impact-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+.projects-section {
+  padding: 90px 10%;
+  background: #f4f9f9;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 42px;
+  color: #2c7a7b;
+  margin-bottom: 50px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 25px;
+}
+
+.project-content h3 {
+  font-size: 28px;
+  color: #2c7a7b;
+  margin-bottom: 15px;
+}
+
+.project-content p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <!-- BRAND -->
+        <div class="brand-section">
+
+            <img src="/image/download.png"
+            alt="Logo"
+            class="logo">
+
+            <div class="brand-text">
+                <h2>Elemental Guardians</h2>
+                <span>Protecting Water For The Future</span>
+            </div>
+
+        </div>
+
+        <!-- NAVIGATION -->
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="aboutus.html">About Us</a></li>
+
+            <li><a href="sustainable smart city.html">
+                Smart City
+            </a></li>
+
+            <li><a href="watersystems.html">
+                Water Systems
+            </a></li>
+
+            <li><a href="savewater.html">
+                Save Water
+            </a></li>
+
+            <li><a href="futureplan.html">
+                Future Plan
+            </a></li>
+
+            <li><a href="reference.html">
+                References
+            </a></li>
+
+        </ul>
+
+    </div>
+
+</nav>
+<!-- ===== HERO ===== -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>The Problem</h1>
+        <p>
+            Yangon faces major water challenges due to rapid urbanization,
+            population growth, and aging infrastructure. The city relies on
+            reservoirs and lakes, but supply is often inconsistent and
+            affected by seasonal flooding and dry periods.
+        </p>
+    </div>
+</header>
+
+<!-- ===== MAIN ===== -->
+<section class="projects-section">
+  <h2>How People Access Water</h2>
+ 
+  <div class="projects-container">
+ 
+    <div class="project-card">
+      <img src="https://www.mdn.gov.mm/sites/default/files/post-gallery/Yangon%20city%E2%80%99s%20water%20management-1.jpg"alt="River Water">
+ 
+      <div class="project-content">
+        <h3>Piped reservoir water</h3>
+ 
+        <p>
+          Most homes, apartments, and businesses in downtown Yangon receive treated water from reservoirs such as Gyobyu and Phugyi. The water is cleaned at treatment plants and distributed through city pipelines.
+        </p>
+      </div>
+    </div>
+ 
+    <div class="project-card">
+      <img src="https://th.bing.com/th/id/OIP.1pVKBa3703KSBeDjZ7Q0bAHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
+      <div class="project-content">
+        <h3>Groundwater Wells</h3>
+ 
+        <p>
+         Some buildings and businesses use underground wells to pump groundwater, especially when city water pressure is low or supply is interrupted.
+        </p>
+      </div>
+    </div>
+ 
+    <div class="project-card">
+      <img src="https://th.bing.com/th/id/OIP.YFw_PVKIqoqKYbAbBo0YnwHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Rainwater Harvesting">
+ 
+      <div class="project-content">
+        <h3>Stored and delivered water</h3>
+ 
+        <p>
+         During shortages, people often rely on rooftop storage tanks or water delivered by private water trucks to ensure a steady supply for daily use.
+        </p>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+  <div class="water-content">
+
+    <div class="water-text">
+      <h2>Why Water Matters</h2>
+
+      <p>
+        Water is one of the world’s most valuable resources. It supports
+        human life, agriculture, ecosystems, and sustainable cities.
+      </p>
+
+      <p>
+        As urban populations grow and climate conditions continue to change,
+        many communities face water shortages, pollution, and inefficient
+        distribution systems.
+      </p>
+
+      <p>
+        Through innovation, smart monitoring, and community awareness,
+        we aim to promote cleaner and more sustainable water management
+        for future generations.
+      </p>
+    </div>
+
+    <div class="water-image">
+      <img src="https://cdn.myanmarseo.com/file/client-cdn/gnlm/wp-content/uploads/2022/11/3NV76JTl-10.jpg" alt="Clean Water">
+    </div>
+
+  </div>
+</section>
+<main class="home-content">
+    <h2 class="section-title">Sustainable water options</h2>
+        <div class="card">
+        <h3>Rainwater harvesting systems</h3>
+        <p>Buildings can collect and store rainwater from rooftops in large tanks for cleaning, flushing, and even drinking after treatment. This reduces pressure on city pipelines and groundwater. UN-Habitat projects in Yangon have already shown that large community rainwater tanks can provide reliable year-round water supplies.</p>
+            </div>
+            <br>
+        <div class="card">
+            <h3>Managed groundwater use with recharge systems</h3>
+            <p>Groundwater can remain reliable if extraction is controlled and combined with recharge methods like infiltration wells and permeable pavements that allow rainwater to refill underground aquifers. Studies warn that uncontrolled pumping in Yangon may cause land subsidence, so regulated use is important.</p>
+        </div>
+<br>
+        <div class="card">
+            <h3>Water recycling and decentralized wastewater treatment</h3>
+            <p>Treated greywater and wastewater can be reused for toilets, landscaping, and cooling systems in apartments and commercial buildings. Decentralized treatment systems (DEWATS) are considered more sustainable and resilient for Yangon because they reduce waste and lower demand for fresh water.</p>
+        </div>
+    </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- FOOTER BRAND -->
+        <div class="footer-brand">
+
+            <img src="image/download.png"
+            alt="Logo"
+            class="footer-logo">
+
+            <h2>Elemental Guardians</h2>
+
+            <p>
+                Building awareness for sustainable
+                water systems and a smarter future
+                for Yangon.
+            </p>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="Home.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="sustainable smart city.html">Smart City</a>
+            <a href="watersystems.html">Water Systems</a>
+            <a href="savewater.html">Save Water</a>
+            <a href="futureplan.html">Future Plan</a>
+            <a href="references.html">References</a>
+
+        </div>
+
+        <!-- SOCIALS -->
+        <div class="footer-socials">
+
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+       
+</body>
+</html>
